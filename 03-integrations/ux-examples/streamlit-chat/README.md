@@ -85,30 +85,11 @@ The application will start and be available at `http://localhost:8501`.
 - **Show thinking**: Display agent reasoning process (when available)
 - **Session Management**: Generate new session IDs to start fresh conversations
 
-## Example Agent
-
-The `example/` directory contains a sample Strands agent implementation that demonstrates:
-
-- Basic agent setup with tools (calculator and weather)
-- Deployment configuration
-- Integration with Bedrock AgentCore Runtime
-
-To deploy the example agent:
-
-```bash
-cd example
-uv run deploy.py
-```
-
 ## Project Structure
 
 ```
 streamlit-chat/
 ├── app.py                      # Main Streamlit application
-├── example/
-│   ├── agent.py               # Example Strands agent implementation
-│   ├── deploy.py              # Agent deployment script
-│   └── requirements.txt       # Agent dependencies
 ├── static/                    # UI assets (fonts, icons, logos)
 ├── pyproject.toml            # Project dependencies
 └── README.md                 # This file

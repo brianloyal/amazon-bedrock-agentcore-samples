@@ -9,11 +9,3 @@ dependencies = [
   "streamlit>=1.49.1",
   "uv>=0.8.15",
 ]
-
-[dependency-groups]
-dev = [
-  "bedrock-agentcore-starter-toolkit>=0.1.8",
-  "bedrock-agentcore>=0.1.2",
-  "strands-agents-tools>=0.2.6",
-  "strands-agents>=1.7.0",
-]
