@@ -18,6 +18,10 @@ Amazon Bedrock AgentCore is a comprehensive service that enables you to deploy a
 - **Tool Visibility**: Optional display of tools used by agents during execution
 - **Thinking Process**: Optional display of agent reasoning (when available)
 
+## Architecture
+
+![Architecture diagram](static/arch.png)
+
 ## Prerequisites
 
 - Python 3.11 or higher
