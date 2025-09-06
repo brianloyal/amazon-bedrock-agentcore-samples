@@ -21,6 +21,7 @@ Amazon Bedrock AgentCore is a comprehensive service that enables you to deploy a
 ## Prerequisites
 
 - Python 3.11 or higher
+- [uv package manager](https://docs.astral.sh/uv/getting-started/installation/)
 - AWS CLI configured with appropriate credentials
 - Access to Amazon Bedrock AgentCore service
 - Deployed agents on Bedrock AgentCore Runtime
@@ -38,21 +39,37 @@ Your AWS credentials need the following permissions:
 1. **Clone the repository**:
 
    ```bash
-   git clone <repository-url>
-   cd streamlit-chat
+   git clone https://github.com/awslabs/amazon-bedrock-agentcore-samples.git
+   cd amazon-bedrock-agentcore-samples/03-integrations/ux-examples/streamlit-chat
    ```
 
-2. **Install dependencies using uv** (recommended):
+2. **Install dependencies using uv**:
 
    ```bash
    uv sync
    ```
 
-   Or using pip:
+## (Optional) Deploy the Example Agent
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+1. **Install dev dependencies using uv** (recommended):
+
+```bash
+uv sync --dev
+```
+
+2. **Configure the agent**:
+
+```bash
+cd example
+uv run agentcore configure -e agent.py
+```
+
+3. **Deploy to AgentCore Runtime**:
+
+```bash
+uv run agentcore launch
+cd ..
+```
 
 ## Running the Application
 
@@ -60,12 +77,6 @@ Your AWS credentials need the following permissions:
 
 ```bash
 uv run streamlit run app.py
-```
-
-### Using Python directly
-
-```bash
-streamlit run app.py
 ```
 
 The application will start and be available at `http://localhost:8501`.
@@ -89,8 +100,9 @@ The application will start and be available at `http://localhost:8501`.
 
 ```
 streamlit-chat/
-├── app.py                      # Main Streamlit application
-├── static/                    # UI assets (fonts, icons, logos)
+├── app.py                    # Main Streamlit application
+├── example.py                # Example agent
+├── static/                   # UI assets (fonts, icons, logos)
 ├── pyproject.toml            # Project dependencies
 └── README.md                 # This file
 ```
